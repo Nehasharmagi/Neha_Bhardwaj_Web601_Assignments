@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generateInterface": "ng generate interface",
-    "generateclass": "ng generate class"
+    "generateclass": "ng generate class",
+    "generatecomponent": "ng generate component"
   },
   "private": true,
   "dependencies": {
