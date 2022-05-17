@@ -7,9 +7,9 @@ import {Content} from "./models/content";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'NSFavouriteMovies';
   MoviesContentItem: Content;
-
   constructor() {
     this.MoviesContentItem =
       {
