@@ -1,41 +1,18 @@
 <div>
   <h1>My Favourtie Movies</h1>
 </div>
+<div *ngFor="let movie of movies">
 <div>
-   <img src="{{ movies.imageUrl }}">
+   <img src="{{ movie.imageUrl }}">
 </div>
-<div> Moive Id: {{movies.id}}</div>
-  <div> Moive Tiltle: {{movies.title}}</div>
-  <div> Description : {{movies.body}}</div>
-  <div> Type : {{movies.type}}</div>
-<div>Movie Tags:{{movies.tags}}</div>
-
-<div>
-  <img src="{{ movies1.imageUrl }}">
+<div> Moive Id: {{movie.id}}</div>
+  <div> Moive Tiltle: {{movie.title}}</div>
+  <div> Description : {{movie.body}}</div>
+  <div> Type : {{movie.type}}</div>
+   <div>Movie Tags:{{movie.tags}}</div>
 </div>
-<div> Moive Id: {{movies1.id}}</div>
-<div> Moive Tiltle: {{movies1.title}}</div>
-<div> Description : {{movies1.body}}</div>
-<div> Type : {{movies1.type}}</div>
-<div>Movie Tags:{{movies1.tags}}</div>
-<div>
-  <img src="{{ movies2.imageUrl }}">
-</div>
-<div> Moive Id: {{movies2.id}}</div>
-<div> Moive Tiltle: {{movies2.title}}</div>
-<div> Description : {{movies2.body}}</div>
-<div> Type : {{movies2.type}}</div>
-<div>Movie Tags:{{movies2.tags}}</div>
-<div>
-  <img src="{{ movies3.imageUrl }}">
-</div>
-<div> Moive Id: {{movies3.id}}</div>
-<div> Moive Tiltle: {{movies3.title}}</div>
-<div> Description : {{movies3.body}}</div>
-<div> Type : {{movies3.type}}</div>
-<div>Movie Tags:{{movies3.tags}}</div>
-
-
+<p>Length Of Array:
+  {{movies.length}}</p>
 
 
 

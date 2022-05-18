@@ -13,12 +13,10 @@ export class List {
   addContent(Content:any){
     this._movies.push(Content);
   }
+
   listLength():number{
-    return this._movies.length;
-  }
-  ArrayItem(index:number){
-    return this._movies[index];
-  }
 
-
+   return this._movies.length;
+  }
+  
 }
