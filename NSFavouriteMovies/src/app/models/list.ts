@@ -5,7 +5,6 @@ export class List {
   private _movies:Content[];
   constructor() {
     this._movies=[]; //A constructor that initially sets the Content array to be empty
-
   }
   //A getter method that returns your Content array
   get items():Content[]{
@@ -19,5 +18,4 @@ export class List {
   listLength():number{
    return this._movies.length;
   }
-
 }
