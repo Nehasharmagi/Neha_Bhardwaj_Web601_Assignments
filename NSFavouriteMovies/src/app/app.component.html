@@ -1,19 +1,4 @@
-<div>
-  <h1>My Favourtie Movies</h1>
-</div>
-<div *ngFor="let movie of movies">
-<div>
-   <img src="{{ movie.imageUrl }}">
-</div>
-<div> Moive Id: {{movie.id}}</div>
-  <div> Moive Tiltle: {{movie.title}}</div>
-  <div> Description : {{movie.body}}</div>
-  <div> Type : {{movie.type}}</div>
-   <div>Movie Tags:{{movie.tags}}</div>
-</div>
-<p>Length Of Array:
-  {{movies.length}}</p>
-
+<app-content-list></app-content-list>
 
 
 

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  width: 450px;
+  text-align: center;
+  margin: 8px auto;
+  border: 2px solid #000;
+  padding: 8px;
+  &.is-odd {
+    // & means this selector is applied directly to :host
+    background-color: green;
+  }
+}
