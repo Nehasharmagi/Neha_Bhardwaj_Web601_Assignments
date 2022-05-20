@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Content} from "./models/content";
-import {List} from "./models/list";
+
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,10 @@ import {List} from "./models/list";
 })
 export class AppComponent {
   title = 'NSFavouriteMovies';
-  List: any = [];
   movies: Content[];
-  contentValue: List;
 
   constructor() {
-    this.contentValue = new List;
+
     this.movies = [
       {
         id: 1,
@@ -55,8 +53,7 @@ export class AppComponent {
         tags:["Action,Refection,crime"]
       },
     ];
-    this.contentValue.addContent(this.movies);
-    console.log("The Data in List :",this.contentValue);
+
   };
 }
 
