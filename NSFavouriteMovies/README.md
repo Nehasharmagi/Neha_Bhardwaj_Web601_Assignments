@@ -1,4 +1,9 @@
 # Neha Sharma NSFavouriteMovies
+Name :Neha Sharma
+
+My Theme Name:My Favourite Movies
+
+I choose This theme to display my favourite movies.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 

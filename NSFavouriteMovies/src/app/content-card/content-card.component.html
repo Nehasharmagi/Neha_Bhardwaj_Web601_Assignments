@@ -1,7 +1,27 @@
-
-<h2>
-  {{ contentItem?.title }}
-</h2>
 <div>
-  <img src="{{ contentItem?.imageUrl }}">
+<h2>
+  <strong>Movie: {{ contentItem?.title}}
+  </strong></h2>
 </div>
+<div>
+  <img class="img" *ngIf="contentItem"  [src]='contentItem? contentItem.imageUrl  :""' (click)="display_moives()"/>
+</div>
+<div>
+<h3 *ngIf="contentItem"> {{ contentItem?  contentItem.body :"" }}
+</h3>
+</div>
+<div>
+<h3>
+  Author Name: {{ contentItem?.author}}
+</h3>
+</div>
+<div>
+  <h3>
+  Type :  {{ contentItem?.type}}
+  </h3>
+</div>
+<div>
+<h3>
+HashTags : {{ contentItem?.tags }}
+</h3>
+  </div>

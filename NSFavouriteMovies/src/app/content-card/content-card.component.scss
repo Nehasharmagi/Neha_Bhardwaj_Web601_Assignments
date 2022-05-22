@@ -3,10 +3,23 @@
   width: 450px;
   text-align: center;
   margin: 8px auto;
-  border: 2px solid #000;
+  border: 2px solid darkred;
   padding: 8px;
-  &.is-odd {
+
+  &.odd{
     // & means this selector is applied directly to :host
-    background-color: green;
+    background-color: white;
+  }
+  &.even{
+    // & means this selector is applied directly to :host
+    background-color: lightgray;
+    &.img{
+      width: 180px;
+      height: 150px;
+      display:  block;
+      margin: 0 auto;
+
+    }
   }
 }
+
