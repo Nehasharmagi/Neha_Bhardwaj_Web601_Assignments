@@ -15,7 +15,7 @@ export class ContentCardComponent implements OnInit {
   }
 
   display_moives() {
-    console.log("Moive Id: " + this.contentItem?.id + "\nTitle of Moive: " + this.contentItem?.title );
+    console.log("Moive Id: " + this.contentItem?.id + "\n Name of Moive: " + this.contentItem?.title );
   }
   ngOnInit(): void {
   }
