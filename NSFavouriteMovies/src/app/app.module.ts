@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentCardComponent } from './content-card/content-card.component';
+import { TypePipePipe } from './type-pipe.pipe';
 
 
 
@@ -12,6 +13,7 @@ import { ContentCardComponent } from './content-card/content-card.component';
     AppComponent,
     ContentListComponent,
     ContentCardComponent,
+    TypePipePipe,
 
 
   ],
