@@ -1,5 +1,12 @@
 <div>
   <h1>My Favourtie Movies</h1>
 </div>
-<app-content-card *ngFor=" let item of movies; index as i; odd as isodd even as iseven"
-                  [contentItem]="item"  [ngClass]="{ odd: isodd ,even: iseven}" ></app-content-card>
+
+<h2>List Of Type Action Movies</h2>
+<app-content-card *ngFor=' let item of (movies | typePipe : "Action") '[contentItem]="item" class="typeOne"></app-content-card><br><br>
+<h2>List of Type Crime Movies</h2>
+<app-content-card *ngFor=' let item of (movies| typePipe : "Crime")'[contentItem]="item" class="typeSecond"></app-content-card><br><br>
+<h2>List of No Type defined</h2>
+<app-content-card *ngFor="let item of (movies | typePipe:'')"  [contentItem]="item" class="typeThird"></app-content-card>
+
+
