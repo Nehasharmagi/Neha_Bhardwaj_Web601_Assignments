@@ -4,7 +4,7 @@
   </strong></h2>
 </div>
 <div>
-  <img class="img" *ngIf="contentItem"  [src]='contentItem? contentItem.imageUrl  :""' (click)="display_moives()" alt=""/>
+  <img class="img" *ngIf="contentItem"  [src]='contentItem? contentItem.imageLink  :""' (click)="display_moives()" alt=""/>
 </div>
 <div>
 <p *ngIf="contentItem"> {{contentItem.body}}
@@ -15,13 +15,9 @@
   Author Name: {{ contentItem?.author}}
 </h4>
 </div>
-<div>
-  <h4 *ngIf="contentItem">
-   {{ contentItem?.type}}
-  </h4>
-</div>
+<div class="type" *ngIf="contentItem?.type"> <b>Type :</b>  {{ contentItem?.type }} </div>
 <div>
 <h4>
-HashTags : {{ contentItem?.tags }}
+HashTags : {{ contentItem?.hashtags }}
 </h4>
   </div>
