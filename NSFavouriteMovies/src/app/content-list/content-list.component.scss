@@ -1,5 +1,25 @@
 h1{
   background-color: lightcoral;
   text-align: center;
-
 }
+h2{
+  text-align: center;
+  color: darkred;
+}
+:host {
+  .itemExist {
+    color: blue;
+    font-size: 18px;
+  }
+  .noItem {
+    color: grey;
+    font-size: 18px;
+  }
+  .inputBox ,h3{
+    margin: 16px auto;
+    padding: 8px;
+    text-align: center;
+    color:brown ;
+  }
+}
+
