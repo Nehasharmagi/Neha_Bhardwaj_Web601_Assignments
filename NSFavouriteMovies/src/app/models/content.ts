@@ -3,7 +3,7 @@ export interface Content {
   title: string,
   body?: string;
   author:string;
-  type?: string;
+  type: string;
   imageLink?: string;
   hashtags?: string[];
 }
