@@ -1,25 +1,34 @@
 :host {
   display: block;
-  width: 450px;
+  width: 460px;
   text-align: center;
   margin: 8px auto;
   border: 2px solid darkred;
   padding: 8px;
 
-  &.odd{
-    // & means this selector is applied directly to :host
-    background-color: white;
-  }
-  &.even{
-    // & means this selector is applied directly to :host
-    background-color: lightgray;
-    &.img{
-      width: 180px;
-      height: 150px;
-      display:  block;
+    &.img {
+      width: 250px;
+      height: 180px;
+      display: block;
       margin: 0 auto;
-
     }
+      &.typeOne {
+        color: green;
+        background-color: black;
+        border: 5px solid darkred;
+      }
+  &.typeSecond {
+    color: darkgrey;
+    background-color: green;
+    border: 5px solid yellow;
+  }
+  &.typeThird {
+    color: darkred;
+    background-color: burlywood;
+    border: 5px solid black;
   }
 }
+
+
+
 
