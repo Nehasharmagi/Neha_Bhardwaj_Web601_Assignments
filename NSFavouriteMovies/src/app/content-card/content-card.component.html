@@ -7,7 +7,7 @@
   <img class="img" *ngIf="contentItem"  [src]='contentItem? contentItem.imageLink  :""' (click)="display_moives()" alt=""/>
 </div>
 <div>
-<p *ngIf="contentItem"> {{contentItem.body}}
+<p *ngIf="contentItem"> {{contentItem?.body}}
 </p>
 </div>
 <div>

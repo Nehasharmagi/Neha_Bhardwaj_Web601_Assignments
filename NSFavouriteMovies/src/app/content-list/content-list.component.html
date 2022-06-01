@@ -1,12 +1,24 @@
 <div>
   <h1>My Favourtie Movies</h1>
 </div>
+<div class="inputBox">
+
+  <label>Enter Author Name: </label><input #authorName placeholder="Enter the Author Name">&nbsp;&nbsp;&nbsp;&nbsp;
+  <button (click)="searchAuthorName(authorName.value)">Search Author Name</button><br>
+  <p *ngIf="message == 'Author Name found in the Movie list'" class="itemExist">Output value of input box: {{authorName.value}} {{ message }}</p>
+  <p *ngIf="message == 'Author Name does not exist in the Movie list !'" class="noItem">Output value of input box: {{authorName.value}} {{ message }}</p>
+</div>
 
 <h2>List Of Type Action Movies</h2>
+
 <app-content-card *ngFor=' let item of (movies | typePipe : "Action") '[contentItem]="item" class="typeOne"></app-content-card><br><br>
+
 <h2>List of Type Crime Movies</h2>
+
 <app-content-card *ngFor=' let item of (movies| typePipe : "Crime")'[contentItem]="item" class="typeSecond"></app-content-card><br><br>
+
 <h2>List of No Type defined</h2>
+
 <app-content-card *ngFor="let item of (movies | typePipe:'')"  [contentItem]="item" class="typeThird"></app-content-card>
 
 
