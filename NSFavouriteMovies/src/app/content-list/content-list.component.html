@@ -17,7 +17,7 @@
 
 <app-content-card *ngFor=' let item of (movies| typePipe : "Crime")'[contentItem]="item" class="typeSecond"></app-content-card><br><br>
 
-<h2>List of No Type defined</h2>
+<h2>List of No Type</h2>
 
 <app-content-card *ngFor="let item of (movies | typePipe:'')"  [contentItem]="item" class="typeThird"></app-content-card>
 
