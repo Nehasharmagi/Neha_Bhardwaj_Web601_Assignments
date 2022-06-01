@@ -12,8 +12,6 @@ export class ContentListComponent implements OnInit {
   movies: Content[];
   message?:string;
 
-
-
   constructor()
   {
 
