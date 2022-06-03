@@ -4,6 +4,6 @@ export interface Content {
   body?: string;
   author:string;
   type: string;
-  imageUrl?: string;
-  tags?: string[];
+  imageLink?: string;
+  hashtags?: string[];
 }
