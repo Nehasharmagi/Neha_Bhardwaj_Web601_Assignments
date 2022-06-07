@@ -6,15 +6,21 @@ import {Directive, ElementRef, HostBinding, HostListener, Input} from '@angular/
 export class HighlightImportantDataDirective
 {
 
+  private isTitleHighlighted: boolean = false;
   private isBorderHighlighted: boolean = false;
-  private defaultTextColor = '';
+  private titleInitialBgColor: string;
+  @Input() titleColor = '';
   @Input() borderHighlight = '';
 
-
   constructor(private elm: ElementRef) {
-    this.defaultTextColor = elm.nativeElement.style.color;
+    this.titleInitialBgColor = elm.nativeElement.style.backgroundColor;
   }
-
+  @HostBinding('style.backgroundColor') get textColor() {
+    return this.isTitleHighlighted ? this.titleColor : this.titleInitialBgColor;
+  }
+  @HostListener('click') onClick() {
+    this.isTitleHighlighted = !this.isTitleHighlighted;
+  }
 
   @HostBinding('style.border') get getBorder() {
     console.log('HostBinding: border', {
@@ -22,11 +28,10 @@ export class HighlightImportantDataDirective
     });
     return this.isBorderHighlighted ? this.borderHighlight : 'none';
   }
-
-
-
+  
   @HostListener('mouseenter') onMouseEnter() {
     this.isBorderHighlighted = true;
+
   }
 
   @HostListener('mouseleave') onMouseLeave() {

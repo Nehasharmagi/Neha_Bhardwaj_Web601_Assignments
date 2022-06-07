@@ -1,6 +1,7 @@
 <div>
   <h2>
-    <strong>Movie: {{ contentItem?.title }}
+    <strong appHighlightImportantData [titleColor]="titleColor"
+    >Movie: {{ contentItem?.title }}
     </strong>
   </h2>
 </div>
@@ -20,7 +21,6 @@
 </div>
 <div>
   <h4>
-
     Author Name: {{ contentItem?.author }}
   </h4>
 </div>
