@@ -1,23 +1,32 @@
 <div>
-<h2>
-  <strong>Movie: {{ contentItem?.title}}
-  </strong></h2>
+  <h2>
+    <strong>Movie: {{ contentItem?.title }}
+    </strong>
+  </h2>
 </div>
 <div>
-  <img class="img" *ngIf="contentItem"  [src]='contentItem? contentItem.imageLink  :""' (click)="display_moives()" alt=""/>
+  <img
+    class="img" *ngIf="contentItem?.imageLink; else defaultImg" [src]="contentItem?.imageLink" (click)="display_moives()" alt=""/>
+
+  <ng-template #defaultImg>
+    <img
+      class="img" width="460px" [src]="defaultImageLink" (click)="display_moives()"
+      alt=""/>
+  </ng-template>
 </div>
 <div>
-<p *ngIf="contentItem"> {{contentItem?.body}}
-</p>
+  <p *ngIf="contentItem">{{ contentItem?.body }}</p>
 </div>
 <div>
-<h4>
-  Author Name: {{ contentItem?.author}}
-</h4>
+  <h4>
+    Author Name: {{ contentItem?.author }}
+  </h4>
 </div>
-<div class="type" *ngIf="contentItem?.type"> <b>Type :</b>  {{ contentItem?.type }} </div>
+<div
+  class="type" *ngIf="contentItem?.type" >
+  <b>Type :</b>{{ contentItem?.type }}
+</div>
 <div>
-<h4>
-HashTags : {{ contentItem?.hashtags }}
-</h4>
-  </div>
+  <h4> HashTags : {{ contentItem?.hashtags }}
+  </h4>
+</div>

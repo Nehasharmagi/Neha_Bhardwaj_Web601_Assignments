@@ -9,7 +9,9 @@ import {Content} from "../models/content";
 export class ContentCardComponent implements OnInit {
 
   @Input() contentItem?: Content;
-
+  defaultImageLink: String =
+    'https://img.jakpost.net/c/2020/01/13/2020_01_13_84657_1578902715._large.jpg';
+  
   constructor() {
 
   }
