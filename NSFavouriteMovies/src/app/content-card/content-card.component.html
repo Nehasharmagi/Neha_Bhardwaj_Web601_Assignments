@@ -6,7 +6,8 @@
 </div>
 <div>
   <img
-    class="img" *ngIf="contentItem?.imageLink; else defaultImg" [src]="contentItem?.imageLink" (click)="display_moives()" alt=""/>
+    class="img" *ngIf="contentItem?.imageLink; else defaultImg" [src]="contentItem?.imageLink" (click)="display_moives()"
+    alt=""/>
 
   <ng-template #defaultImg>
     <img
@@ -19,11 +20,12 @@
 </div>
 <div>
   <h4>
+
     Author Name: {{ contentItem?.author }}
   </h4>
 </div>
 <div
-  class="type" *ngIf="contentItem?.type" >
+  class="type" *ngIf="contentItem?.type" appHighlightImportantData [borderHighlight]="borderHighlight">
   <b>Type :</b>{{ contentItem?.type }}
 </div>
 <div>

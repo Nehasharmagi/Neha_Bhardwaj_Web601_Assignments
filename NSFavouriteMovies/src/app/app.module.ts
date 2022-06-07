@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { TypePipePipe } from './type-pipe.pipe';
+import { HighlightImportantDataDirective } from './highlight-important-data.directive';
 
 
 
@@ -14,6 +15,7 @@ import { TypePipePipe } from './type-pipe.pipe';
     ContentListComponent,
     ContentCardComponent,
     TypePipePipe,
+    HighlightImportantDataDirective,
 
 
   ],
