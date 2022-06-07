@@ -11,7 +11,7 @@ export class ContentCardComponent implements OnInit {
   @Input() contentItem?: Content;
   defaultImageLink: String =
     'https://media.istockphoto.com/vectors/movie-time-vector-illustration-cinema-poster-concept-on-red-round-vector-id911590226?k=20&m=911590226&s=612x612&w=0&h=HlJtSKF-fLsKFy1QJ-EVnxXkktBKNS-3jUQPXsSasYs=';
-  titleColor = 'yellow';
+  titleColor = '#10F1E0';
   borderHighlight = '3px solid red';
   hoverTextColor = 'blue';
   constructor() {
