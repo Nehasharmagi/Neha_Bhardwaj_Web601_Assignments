@@ -12,7 +12,7 @@
 
   <ng-template #defaultImg>
     <img
-      class="img" width="460px" [src]="defaultImageLink" (click)="display_moives()"
+      class="img" width="250px"  [src]="defaultImageLink" (click)="display_moives()"
       alt=""/>
   </ng-template>
 </div>
@@ -20,7 +20,8 @@
   <p *ngIf="contentItem">{{ contentItem?.body }}</p>
 </div>
 <div>
-  <h4>
+  <h4
+    appHighlightImportantData [titleColor]="titleColor" [borderHighlight]="borderHighlight" [hoverTextColor]="hoverTextColor">
     Author Name: {{ contentItem?.author }}
   </h4>
 </div>
@@ -29,6 +30,6 @@
   <b>Type :</b>{{ contentItem?.type }}
 </div>
 <div>
-  <h4> HashTags : {{ contentItem?.hashtags }}
+  <h4 appHighlightImportantData [hoverTextColor]="hoverTextColor"> HashTags : {{ contentItem?.hashtags }}
   </h4>
 </div>
