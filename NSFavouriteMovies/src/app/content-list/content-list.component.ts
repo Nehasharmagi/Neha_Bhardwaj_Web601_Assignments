@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Content} from "../models/content";
 import {stringify} from "@angular/compiler/src/util";
+import {NsfavouriteMoviesService} from "../services/nsfavourite-movies.service";
 
 @Component({
   selector: 'app-content-list',
@@ -12,12 +13,14 @@ export class ContentListComponent implements OnInit {
   movies: Content[];
   message?:string;
 
-  constructor()
+  constructor(private movieService: NsfavouriteMoviesService)
   {
-
     this.movies = [];
   }
   ngOnInit(): void {
+    this.movieService
+      .getMyFavMovies()
+      .subscribe((movies) => (this.movies = movies));
   }
 
   searchAuthorName(authorValue: string): any{
