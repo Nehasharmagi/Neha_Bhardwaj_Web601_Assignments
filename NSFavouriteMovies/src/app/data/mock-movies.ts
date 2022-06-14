@@ -1,6 +1,6 @@
 import { Content } from '../models/content';
 
-export const mockMovies: Content[] = [
+export const MOCKMOVIES: Content[] = [
   {
     id: 1,
     title: "Aadhaar",
