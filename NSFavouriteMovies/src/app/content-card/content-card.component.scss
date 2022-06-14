@@ -18,6 +18,12 @@
         background-color: black;
         border: 5px solid darkred;
       }
+
+  &.typeSearch {
+    box-shadow: 0px 12px 36px #FE000066;
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+  }
+
   &.typeSecond {
     color: darkgrey;
     background-color: green;
