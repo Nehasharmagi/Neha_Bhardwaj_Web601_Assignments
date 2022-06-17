@@ -1,5 +1,16 @@
 import { Content } from '../models/content';
 
+export const DEFAULTMOVIESCONTENT: Content = {
+  id: -1,
+  title: 'Oops!',
+  body: '',
+  author: 'not found',
+  type: '',
+  imageLink:
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuoZapV0Lw5vjESzLkeBQL60BPeejjNbywKcoeRbFtzxBTGKaR0apyZH4DRYPuvuwFr0&usqp=CAU',
+  hashtags: ['not found'],
+}
+
 export const MOCKMOVIES: Content[] = [
   {
     id: 1,

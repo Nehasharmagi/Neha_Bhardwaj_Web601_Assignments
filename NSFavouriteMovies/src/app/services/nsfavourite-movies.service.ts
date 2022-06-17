@@ -26,11 +26,11 @@ export class NsfavouriteMoviesService {
           id: -1,
           title: 'Oops!',
           body: '',
-          author: '',
+          author: 'NOT FOUND',
           type: '',
           imageLink:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuoZapV0Lw5vjESzLkeBQL60BPeejjNbywKcoeRbFtzxBTGKaR0apyZH4DRYPuvuwFr0&usqp=CAU',
-          hashtags: [''],
+          hashtags: ['Not Found'],
         },
       ]);
     }
