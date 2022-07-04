@@ -1,24 +1,4 @@
-<div>
-  <input
-    type="search"
-    #movieId
-    name="search movie"
-    id=""
-    placeholder="Enter Movie Id"
-  />
-  <input
-    type="button"
-    value="Search Movie"
-    (click)="searchMovieById(movieId.value)"
-  />
-  <app-content-card
-    *ngFor="let item of searchMovie"
-    [contentItem]="item"
-    class="typeSearch"
-  ></app-content-card
-  ><br /><br />
-</div>
-<app-content-list></app-content-list>
+<router-outlet></router-outlet>
 
 
 
