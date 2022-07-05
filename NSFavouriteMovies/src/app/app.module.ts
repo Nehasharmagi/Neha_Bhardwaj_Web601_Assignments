@@ -8,6 +8,7 @@ import { TypePipePipe } from './type-pipe.pipe';
 import { HighlightImportantDataDirective } from './highlight-important-data.directive';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { ContentDetailsComponent } from './content-details/content-details.component';
+import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ContentDetailsComponent } from './content-details/content-details.compo
     TypePipePipe,
     HighlightImportantDataDirective,
     ContentDetailsComponent,
+    SearchMovieComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule],
