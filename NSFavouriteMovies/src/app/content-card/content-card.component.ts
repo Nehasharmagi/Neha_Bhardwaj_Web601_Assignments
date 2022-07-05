@@ -14,6 +14,7 @@ export class ContentCardComponent implements OnInit {
   titleColor = '#10F1E0';
   borderHighlight = '3px solid red';
   hoverTextColor = 'blue';
+
   constructor() {
   }
 

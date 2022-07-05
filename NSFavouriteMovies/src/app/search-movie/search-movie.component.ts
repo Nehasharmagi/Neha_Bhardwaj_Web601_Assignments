@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NsfavouriteMoviesService} from "../services/nsfavourite-movies.service";
+import {Content} from "../models/content";
 
 @Component({
   selector: 'app-search-movie',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchMovieComponent implements OnInit {
 
-  constructor() { }
+  searchMovie: Content[];
+
+  public id: any;
+  public resultFound: boolean = true;
+  constructor(private movieService: NsfavouriteMoviesService) {
+    this.searchMovie = [];
+  }
 
   ngOnInit(): void {
   }
 
+  searchMovieById(id: any) {
+    console.log({ id, type: typeof id });
+    this.movieService
+      .getMyFavMoviesById(id)
+      .subscribe((movies) => (this.searchMovie = movies));
+
+    if (!this.searchMovie) {
+      this.resultFound = true;
+    } else {
+      this.resultFound = false;
+    }
+
+    console.log({ id, type: typeof id, searchMovie: this.searchMovie });
+  }
 }
