@@ -1,1 +1,39 @@
-<p>content-details works!</p>
+<div>
+  <h1>Movie Details</h1>
+</div>
+
+<div class="main__row" *ngFor="let item of movie">
+  <div class="col__1">
+    <img
+      src="{{ item?.imageLink ? item.imageLink : defaultImageLink }}"
+      alt=""
+      width="320"
+      height="400"
+    />
+  </div>
+
+  <div class="col__2">
+    <ul>
+      <li class="title__text">{{ item?.title }}</li>
+      <li>{{ item?.body }}</li>
+      <li><span class="heading">Author: </span> {{ item?.author }}</li>
+      <li>
+        <span class="heading">Type: </span>
+        {{ !item?.type ? "Not Available" : item?.type }}
+      </li>
+      <li><span class="heading">Hashtags: </span> {{ item?.hashtags }}</li>
+      <li>
+        <a [routerLink]="['/list']" routerLinkActive="active"> Back </a>
+      </li>
+
+      <li>
+        <br />
+
+        <a [routerLink]="['/detail', item.id - 1]" class="previous">
+          Go to Previous Movie
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+

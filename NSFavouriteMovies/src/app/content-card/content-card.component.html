@@ -17,19 +17,63 @@
   </ng-template>
 </div>
 <div>
-  <p *ngIf="contentItem">{{ contentItem?.body }}</p>
-</div>
-<div>
-  <h4
-    appHighlightImportantData [titleColor]="titleColor" [borderHighlight]="borderHighlight" [hoverTextColor]="hoverTextColor">
-    Author Name: {{ contentItem?.author }}
-  </h4>
-</div>
-<div
-  class="type" *ngIf="contentItem?.type" appHighlightImportantData [borderHighlight]="borderHighlight">
-  <b>Type :</b>{{ contentItem?.type }}
-</div>
-<div>
-  <h4 appHighlightImportantData [hoverTextColor]="hoverTextColor"> HashTags : {{ contentItem?.hashtags }}
-  </h4>
+  <div>
+
+      <a [routerLink]="['/detail', contentItem?.id]" routerLinkActive="active">
+        <strong appHighlightImportantData [titleColor]="titleColor"
+        >Movie: {{ contentItem?.title }}
+        </strong>
+      </a>
+    
+  </div>
+  <div>
+    <img
+      class="img"
+      *ngIf="contentItem?.imageLink; else defaultImg"
+      [src]="contentItem?.imageLink"
+      (click)="display_moives()"
+      alt=""
+    />
+
+    <ng-template #defaultImg>
+      <img
+        class="img"
+        width="460px"
+        [src]="defaultImageLink"
+        (click)="display_moives()"
+        alt=""
+      />
+    </ng-template>
+  </div>
+  <!-- <div>
+    <p *ngIf="contentItem">{{ contentItem?.body }}</p>
+  </div> -->
+  <!-- <div>
+    <h4
+      appHighlightImportantData
+      [titleColor]="titleColor"
+      [borderHighlight]="borderHighlight"
+      [hoverTextColor]="hoverTextColor"
+    >
+      Author Name: {{ contentItem?.author }}
+    </h4>
+  </div> -->
+  <div
+    class="type"
+    *ngIf="contentItem?.type || contentItem?.id != -1"
+    appHighlightImportantData
+    [borderHighlight]="borderHighlight"
+  >
+    <b>Type :</b>
+    {{ contentItem?.type }}
+  </div>
+  <div>
+    <h4
+      appHighlightImportantData
+      [hoverTextColor]="hoverTextColor"
+      *ngIf="contentItem?.id != -1"
+    >
+      HashTags : {{ contentItem?.hashtags }}
+    </h4>
+  </div>
 </div>
