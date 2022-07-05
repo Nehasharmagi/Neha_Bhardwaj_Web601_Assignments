@@ -9,6 +9,7 @@ import { HighlightImportantDataDirective } from './highlight-important-data.dire
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { ContentDetailsComponent } from './content-details/content-details.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
     HighlightImportantDataDirective,
     ContentDetailsComponent,
     SearchMovieComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule],
