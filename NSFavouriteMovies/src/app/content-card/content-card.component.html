@@ -1,22 +1,4 @@
 <div>
-  <h2>
-    <strong appHighlightImportantData [titleColor]="titleColor"
-    >Movie: {{ contentItem?.title }}
-    </strong>
-  </h2>
-</div>
-<div>
-  <img
-    class="img" *ngIf="contentItem?.imageLink; else defaultImg" [src]="contentItem?.imageLink" (click)="display_moives()"
-    alt=""/>
-
-  <ng-template #defaultImg>
-    <img
-      class="img" width="250px"  [src]="defaultImageLink" (click)="display_moives()"
-      alt=""/>
-  </ng-template>
-</div>
-<div>
   <div>
     <h2 *ngIf="contentItem?.id == -1">0 Record Found!</h2>
     <h2 *ngIf="contentItem?.id != -1">
