@@ -18,13 +18,14 @@
 </div>
 <div>
   <div>
-
+    <h2 *ngIf="contentItem?.id == -1">0 Record Found!</h2>
+    <h2 *ngIf="contentItem?.id != -1">
       <a [routerLink]="['/detail', contentItem?.id]" routerLinkActive="active">
         <strong appHighlightImportantData [titleColor]="titleColor"
         >Movie: {{ contentItem?.title }}
         </strong>
       </a>
-    
+    </h2>
   </div>
   <div>
     <img
