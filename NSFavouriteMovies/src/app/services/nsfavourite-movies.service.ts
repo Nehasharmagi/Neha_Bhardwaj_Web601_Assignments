@@ -1,18 +1,33 @@
 import { Injectable } from '@angular/core';
-import {MOCKMOVIES} from "../data/mock-movies";
-import {Observable, of} from "rxjs";
-import {Content} from "../models/content";
+import { Content } from '../models/content';
+import { Observable, of } from 'rxjs';
+import { MOCKMOVIES } from '../data/mock-movies';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NsfavouriteMoviesService {
-
-  constructor() {
-
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
+    route.params.subscribe((params) => console.log({ params }));
   }
+
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type': 'application/json' }),
+  };
+
   getMyFavMovies(): Observable<Content[]> {
-    return of(MOCKMOVIES);
+    return this.http.get<Content[]>('api/movies');
+  }
+
+  updateMovie(updatedMovie: Content): Observable<any> {
+    return this.http.put('api/movies', updatedMovie, this.httpOptions);
+  }
+
+  addMovie(updatedMovie: Content): Observable<any> {
+    return this.http.post('api/movies', updatedMovie, this.httpOptions);
   }
 
   getMyFavMoviesById(id: Number): Observable<Content[]> {
@@ -20,20 +35,22 @@ export class NsfavouriteMoviesService {
       console.log(movie.id, id);
       return movie.id == id;
     });
+
     if (!filterMovies.length) {
       return of([
         {
           id: -1,
           title: 'Oops!',
           body: '',
-          author: 'NOT FOUND',
+          author: '',
           type: '',
           imageLink:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuoZapV0Lw5vjESzLkeBQL60BPeejjNbywKcoeRbFtzxBTGKaR0apyZH4DRYPuvuwFr0&usqp=CAU',
-          hashtags: ['Not Found'],
+          hashtags: [''],
         },
       ]);
     }
+
     console.log({ filterMovies });
     return of(filterMovies);
   }
@@ -50,13 +67,13 @@ export class NsfavouriteMoviesService {
     return of(MOCKMOVIES);
   }
 
-  updateMovie(movie: Content) {
-    const updatedData = MOCKMOVIES.map((x) =>
-      x.id === movie.id ? { ...x, ...movie } : x
-    );
+  // updateMovie(movie: Content) {
+  //   const updatedData = mockMovies.map((x) =>
+  //     x.id === movie.id ? { ...x, ...movie } : x
+  //   );
 
-    return updatedData;
-  }
+  //   return updatedData;
+  // }
 
   deleteMovie(id: Number): Observable<Content[]> {
     var afterDelete = MOCKMOVIES.filter(function (movie) {

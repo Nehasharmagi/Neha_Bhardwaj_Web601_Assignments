@@ -28,12 +28,17 @@
 
       <li>
         <br />
+        <a
+          [routerLink]="['/updateContent', item?.id]"
+          routerLinkActive="active"
+        >
+          <strong>Edit Movie </strong>
+        </a>
 
-        <a [routerLink]="['/detail', item.id - 1]" class="previous">
+        <a [routerLink]="['/detail', item.id ?? 0 - 1]" class="previous">
           Go to Previous Movie
         </a>
       </li>
     </ul>
   </div>
 </div>
-

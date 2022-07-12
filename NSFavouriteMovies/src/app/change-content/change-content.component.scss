@@ -1,0 +1,25 @@
+.input label{
+    display:  block;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+input,textarea{
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid gray;
+    width: 30%;
+    
+
+}
+
+
+button{
+    margin-top: 6px;
+    border-radius: 4px;
+    color: white;
+    background-color: indigo;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}

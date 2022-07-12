@@ -14,6 +14,9 @@ import { LinkComponent } from './link/link.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {ChangeContentComponent} from "./change-content/change-content.component";
+import {FormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -27,10 +30,13 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     SearchMovieComponent,
     PageNotFoundComponent,
     LinkComponent,
+    ChangeContentComponent,
+
+
 
   ],
   imports: [BrowserModule, AppRoutingModule,
-
+    FormsModule,
     HttpClientModule,
 
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {

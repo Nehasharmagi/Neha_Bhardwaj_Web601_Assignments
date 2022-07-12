@@ -1,0 +1,56 @@
+<!-- title: string; body?: string; author: string; type: string; imageLink?: string;
+  hashtags?: string[]; -->
+<div *ngIf="movie.id == -1">
+  <h1>Sorry .. No Result Found</h1>
+</div>
+
+<div>
+  <form action="" *ngIf="movie.id != -1">
+    <h1>Add New Movie</h1>
+    <!-- <div class="input">
+      <label> ID: </label>
+      <input type="text" />
+    </div> -->
+
+    <div class="input">
+      <label> Title:</label>
+      <input type="text" name="title" [(ngModel)]="movie.title" />
+    </div>
+
+    <div class="input">
+      <label> Body: </label>
+      <textarea name="body" [(ngModel)]="movie.body"> </textarea>
+    </div>
+
+    <div class="input">
+      <label> Author: </label>
+      <input type="text" name="author" [(ngModel)]="movie.author" />
+    </div>
+
+    <div class="input">
+      <label> Type: </label>
+      <input type="text" name="type" [(ngModel)]="movie.type" />
+    </div>
+
+    <div class="input">
+      <label> Image: </label>
+      <input type="url" name="img" [(ngModel)]="movie.imageLink" />
+    </div>
+
+    <div>
+      <button
+        (click)="
+          isNaN(movie.id) || movie.id == undefined
+            ? addMovieToServer()
+            : updateMovieOnServer()
+        "
+      >
+        {{
+          isNaN(movie.id) || movie.id == undefined
+            ? "Add Movie"
+            : "Update Movie"
+        }}
+      </button>
+    </div>
+  </form>
+</div>

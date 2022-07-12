@@ -5,6 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {ContentDetailsComponent} from "../content-details/content-details.component";
 import {SearchMovieComponent} from "../search-movie/search-movie.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
+import {ChangeContentComponent} from "../change-content/change-content.component";
 
 
 const routes: Routes = [
@@ -28,6 +29,16 @@ const routes: Routes = [
     path: 'search',
 
     component: SearchMovieComponent,
+  },
+  {
+    path: 'addContent',
+
+    component: ChangeContentComponent,
+  },
+  {
+    path: 'updateContent/:id',
+
+    component: ChangeContentComponent,
   },
   {
     path: '**',
