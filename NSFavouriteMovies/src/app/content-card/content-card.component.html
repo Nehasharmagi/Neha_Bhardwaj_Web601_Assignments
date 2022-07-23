@@ -1,17 +1,43 @@
 <div>
-  <div>
-    <h2 *ngIf="contentItem?.id == -1">0 Record Found!</h2>
-    <h2 *ngIf="contentItem?.id != -1">
-      <a [routerLink]="['/detail', contentItem?.id]" routerLinkActive="active">
-        <strong appHighlightImportantData [titleColor]="titleColor"
-        >Movie: {{ contentItem?.title }}
-        </strong>
-      </a>
-    </h2>
-  </div>
-  <div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2 *ngIf="contentItem?.id == -1">0 Record Found!</h2>
+        <h2 *ngIf="contentItem?.id != -1">
+          <a
+            [routerLink]="['/detail', contentItem?.id]"
+            routerLinkActive="active"
+          >
+            <strong appHighlightImportantData [titleColor]="titleColor"
+            >Movie: {{ contentItem?.title }}
+            </strong>
+          </a>
+        </h2>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <div
+          class="type"
+          *ngIf="contentItem?.type || contentItem?.id != -1"
+          appHighlightImportantData
+          [borderHighlight]="borderHighlight"
+        >
+          <b>Type :</b>
+          {{ contentItem?.type }}
+        </div>
+        <div>
+          <h4
+            appHighlightImportantData
+            [hoverTextColor]="hoverTextColor"
+            *ngIf="contentItem?.id != -1"
+          >
+            HashTags : {{ contentItem?.hashtags }}
+          </h4>
+        </div>
+      </mat-card-subtitle>
+    </mat-card-header>
+
     <img
-      class="img"
+      mat-card-image
       *ngIf="contentItem?.imageLink; else defaultImg"
       [src]="contentItem?.imageLink"
       (click)="display_moives()"
@@ -20,7 +46,7 @@
 
     <ng-template #defaultImg>
       <img
-        class="img"
+        mat-card-image
         width="460px"
         [src]="defaultImageLink"
         (click)="display_moives()"
@@ -28,42 +54,14 @@
       />
     </ng-template>
 
-    <!-- <a
-      [routerLink]="['/updateContent', contentItem?.id]"
-      routerLinkActive="active"
-    >
-      <strong>Edit Movie </strong>
-    </a> -->
-  </div>
-  <!-- <div>
-    <p *ngIf="contentItem">{{ contentItem?.body }}</p>
-  </div> -->
-  <!-- <div>
-    <h4
-      appHighlightImportantData
-      [titleColor]="titleColor"
-      [borderHighlight]="borderHighlight"
-      [hoverTextColor]="hoverTextColor"
-    >
-      Author Name: {{ contentItem?.author }}
-    </h4>
-  </div> -->
-  <div
-    class="type"
-    *ngIf="contentItem?.type || contentItem?.id != -1"
-    appHighlightImportantData
-    [borderHighlight]="borderHighlight"
-  >
-    <b>Type :</b>
-    {{ contentItem?.type }}
-  </div>
-  <div>
-    <h4
-      appHighlightImportantData
-      [hoverTextColor]="hoverTextColor"
-      *ngIf="contentItem?.id != -1"
-    >
-      HashTags : {{ contentItem?.hashtags }}
-    </h4>
-  </div>
+    <mat-card-content>
+      <p>
+        {{ contentItem?.body }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

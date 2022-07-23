@@ -17,17 +17,14 @@ const routes: Routes = [
   },
   {
     path: 'list',
-
     component: ContentListComponent,
   },
   {
     path: 'detail/:id',
-
     component: ContentDetailsComponent,
   },
   {
     path: 'search',
-
     component: SearchMovieComponent,
   },
   {
@@ -37,12 +34,10 @@ const routes: Routes = [
   },
   {
     path: 'updateContent/:id',
-
     component: ChangeContentComponent,
   },
   {
     path: '**',
-
     component: PageNotFoundComponent,
   },
 ]

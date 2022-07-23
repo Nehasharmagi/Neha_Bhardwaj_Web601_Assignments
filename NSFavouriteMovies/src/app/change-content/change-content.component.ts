@@ -38,6 +38,7 @@ export class ChangeContentComponent implements OnInit {
           type: '',
         };
       });
+
   }
 
   updateMovieOnServer(): void {

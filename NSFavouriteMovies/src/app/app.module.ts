@@ -16,8 +16,12 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {ChangeContentComponent} from "./change-content/change-content.component";
 import {FormsModule} from "@angular/forms";
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatListModule} from "@angular/material/list";
+import {MatIconModule} from "@angular/material/icon";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -31,17 +35,20 @@ import {FormsModule} from "@angular/forms";
     PageNotFoundComponent,
     LinkComponent,
     ChangeContentComponent,
-
-
-
   ],
   imports: [BrowserModule, AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
+    AppRoutingModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       delay: 1000,
     }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
