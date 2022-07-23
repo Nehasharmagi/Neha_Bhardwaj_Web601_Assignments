@@ -5,7 +5,7 @@
 </div>
 
 <div>
-  <form action="" *ngIf="movie.id != -1">
+  <form action="" *ngIf="movie.id != -1" style="padding: 10px 15px">
     <h1>Add New Movie</h1>
     <!-- <div class="input">
       <label> ID: </label>
@@ -13,46 +13,72 @@
     </div> -->
 
     <div class="input">
-      <label> Title:</label>
-      <input type="text" name="title" [(ngModel)]="movie.title" />
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          placeholder="Title"
+          name="title"
+          [(ngModel)]="movie.title"
+        />
+      </mat-form-field>
     </div>
 
     <div class="input">
-      <label> Body: </label>
-      <textarea name="body" [(ngModel)]="movie.body"> </textarea>
+      <mat-form-field appearance="fill">
+        <mat-label>Body</mat-label>
+        <textarea
+          matInput
+          name="body"
+          placeholder="Body"
+          [(ngModel)]="movie.body"
+        ></textarea>
+      </mat-form-field>
     </div>
 
     <div class="input">
-      <label> Author: </label>
-      <input type="text" name="author" [(ngModel)]="movie.author" />
+      <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input
+          matInput
+          placeholder="Author"
+          name="author"
+          [(ngModel)]="movie.author"
+        />
+      </mat-form-field>
     </div>
 
-    <div class="input">
-      <label> Type: </label>
-      <input type="text" name="type" [(ngModel)]="movie.type" />
-    </div>
-
-    <div class="input">
-      <label> Image: </label>
-      <input type="url" name="img" [(ngModel)]="movie.imageLink" />
-    </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput placeholder="Type" name="type" [(ngModel)]="movie.type" />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Image Url</mat-label>
+      <input
+        matInput
+        placeholder="Image"
+        type="url"
+        name="img"
+        [(ngModel)]="movie.imageLink"
+      />
+    </mat-form-field>
 
     <div>
       <button
+        mat-raised-button
+        color="primary"
         (click)="
           isNaN(movie.id) || movie.id == undefined
             ? addMovieToServer()
             : updateMovieOnServer()
         "
       >
-
         {{
-          isNaN(movie.id) || movie.id == undefined
-            ? "Add Movie"
-            : "Update Movie"
-
+        isNaN(movie.id) || movie.id == undefined
+          ? "Add Movie"
+          : "Update Movie"
         }}
-
       </button>
     </div>
   </form>

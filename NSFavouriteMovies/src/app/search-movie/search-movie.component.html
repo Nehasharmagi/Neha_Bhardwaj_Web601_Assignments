@@ -1,16 +1,21 @@
 <div>
-  <input
-    type="search"
-    #movieId
-    name="search movie"
-    id=""
-    placeholder="Enter Movie Id"
-  />
-  <input
-    type="button"
-    value="Search Movie"
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      name="search movie"
+      id=""
+      placeholder="Enter Movie Id"
+      #movieId
+    />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
     (click)="searchMovieById(movieId.value)"
-  />
+  >
+    Search Movie
+  </button>
 
   <app-content-card
     *ngFor="let item of searchMovie"
@@ -19,4 +24,3 @@
   ></app-content-card
   ><br /><br />
 </div>
-

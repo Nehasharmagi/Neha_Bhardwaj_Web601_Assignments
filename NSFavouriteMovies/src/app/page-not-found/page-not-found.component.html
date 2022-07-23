@@ -3,8 +3,12 @@
   <div>
     <h3>Page Not Found!</h3>
   </div>
-
+  <br />
   <div>
-    <a [routerLink]="['/list']" routerLinkActive="active"> Go to home Page </a>
+    <a [routerLink]="['/list']" routerLinkActive="active">
+      <button mat-raised-button color="primary">
+        <mat-icon>home</mat-icon>
+      </button>
+    </a>
   </div>
 </div>
