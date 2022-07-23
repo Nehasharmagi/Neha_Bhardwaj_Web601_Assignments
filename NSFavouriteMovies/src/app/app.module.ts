@@ -22,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
-
+import {ServiceWorkerModule} from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
@@ -53,7 +54,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
       delay: 1000,
     }),
     BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
